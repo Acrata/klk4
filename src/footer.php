@@ -12,6 +12,8 @@
 			<!-- /footer -->
 
 		</div>
+		<!-- /pu5her -->
+		</div>
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>

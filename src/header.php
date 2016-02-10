@@ -25,10 +25,10 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-
+	<h3>header</h3>
 		<!-- wrapper -->
 		<div class="wrapper">
-
+			<div class="mp-pusher" id="mp-pusher">
 			<!-- header -->
 			<header class="header clear" role="banner">
 
@@ -43,6 +43,7 @@
 
 					<!-- nav -->
 					<nav class="nav" role="navigation">
+						<?php say_hi(); ?>
 						<?php html5blank_nav(); ?>
 					</nav>
 					<!-- /nav -->
