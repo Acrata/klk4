@@ -4,12 +4,12 @@
  * Main `sass` file. Import here `sass` files
  */
 
-// Modules
+/* Modules*/
 @import "modules/variables";
 @import "modules/mixins";
 @import "modules/fonts";
 
-// Partials
+/* Partials*/
 @import "partials/reset";
 @import "partials/wordpress";
 @import "partials/utils";
@@ -19,3 +19,89 @@
 @import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
+@import "partials/multi-p";
+
+
+body {
+  font-family: 'Droid Sans', sans-serif;
+}
+nav#mp-menu h2 {
+  color: white;
+}
+#banner-top-klk {
+	/* margin:auto;*/
+	/* width:95%;*/
+  lost-center:1280px;
+}
+
+main {
+  lost-column:6/6 2;
+  /*lost-move:1/13;*/
+}
+.single main {
+  lost-column:6/6;
+}
+
+.single #main-container {
+  width: 100%;
+  display: flex;
+  lost-center:100%;
+  lost-utility:clearfix;
+}
+
+.single aside {
+  lost-column:1/1;
+}
+
+#main-container {
+  width: 80%;
+  display: flex;
+  lost-center:100%;
+  lost-utility:clearfix;
+}
+
+.single section a img {
+  width:100vw;
+}
+
+footer {
+}
+
+.home aside {
+  lost-column:2/6;
+  lost-utility:clearfix;
+}
+
+aside {
+}
+
+#banner-top-klk img {
+  lost-align:center;
+  text-align: center;
+}
+.single main section article{
+  lost-utility:clearfix;
+  lost-column:4/6;
+}
+.single aside {
+  lost-column:2/6 0 flex;
+}
+
+.single #main-container {
+  width: 80%;
+}
+.single article #banner-top-klk img {
+  text-align: center;
+}
+
+.mp-pusher {
+}
+
+.footer, .single .footer {
+  lost-row:1/6;
+  lost-utility:clearfix;
+  background: aqua;
+  // lost-column:1/136;
+  // lost-center:970px;
+  height: 122px;
+}

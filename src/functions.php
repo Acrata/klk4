@@ -62,9 +62,41 @@ if (function_exists('add_theme_support'))
     Functions
 \*------------------------------------*/
 
-function say_hi()
+/**
+ *
+ */
+class mi_walker_nav extends Walker_Nav_Menu
 {
-  echo "hi";
+  public function start_lvl( &$output, $depth = 0, $args = array() ) {
+                  $indent = str_repeat("\t", $depth);
+	                $output .= "\n$indent<div class=\"mp-level\"><h2></h2><a class=\"mp-back\" href=\"#\">back</a><ul class=\"nojoda-menu\">\n";
+	        }
+
+}
+
+// HTML5 Blank navigation
+function multilevel_push_nav()
+{
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'header-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'multi-menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => new mi_walker_nav()
+        )
+    );
 }
 // HTML5 Blank navigation
 function html5blank_nav()
@@ -106,6 +138,10 @@ function html5blank_header_scripts()
             // Modernizr
             wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), '2.8.3');
 
+            // mlpushmenu
+            // wp_register_script('mlpushmenu', get_template_directory_uri() . '/js/mlpushmenu.js', array(), '1.0.0');
+
+
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
@@ -128,6 +164,20 @@ function html5blank_header_scripts()
         }
     }
 }
+
+//Load classie
+function mi_script_klk() {
+
+            // mlpushmenu
+            wp_register_script('mlpushmenu', get_template_directory_uri() . '/js/mlpushmenu.js', array(), '1.0.0',true);
+            wp_enqueue_script('mlpushmenu');
+
+            // mlpushmenu
+            wp_register_script('classie','https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js', array(), '1.0.1',true);
+            wp_enqueue_script('classie');
+}
+
+add_action( 'wp_enqueue_scripts', 'mi_script_klk' );
 
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
@@ -164,6 +214,7 @@ function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
+        'Multi-level-menu' => __('Header Multi Menu', 'html5blank'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
         'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
     ));

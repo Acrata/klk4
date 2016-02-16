@@ -1,3 +1,6 @@
+
+		</div>
+		<!-- /main-container -->
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
@@ -26,6 +29,9 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
+		</script>
+		<script>
+			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
 		</script>
 
 	</body>

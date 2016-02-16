@@ -5,9 +5,29 @@
 
 
 // Header container
-.header {}
-
+.header {
+	background: #1F0124;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+  .header i {
+    color:white;
+  }
 // Logo
-.logo {}
+.logo {
+  span {
+    position: absolute;
+    left: 0;
+  }
+  span a i {
+    color:white;
+  }
 
-.logo-img {}
+}
+
+.logo-img {
+  width: 100px;
+  background-color: white;
+  flex-grow: 2;
+}

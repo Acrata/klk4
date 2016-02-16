@@ -116,18 +116,22 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
     "del": "^0.1.2",
-    "gulp": "^3.6.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^0.0.7",
     "gulp-concat": "^2.3.4",
     "gulp-csso": "^0.2.9",
     "gulp-jshint": "^1.8.4",
     "gulp-livereload": "^1.2.0",
     "gulp-load-plugins": "^0.5.0",
+    "gulp-postcss": "^6.1.0",
     "gulp-ruby-sass": "^0.7.1",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-template": "^1.0.0",
     "gulp-uglify": "^1.0.0",
-    "jshint-stylish": "^0.4.0"
+    "jshint-stylish": "^0.4.0",
+    "lost": "^6.7.1"
   },
   "engines": {
     "node": ">=0.10.0"

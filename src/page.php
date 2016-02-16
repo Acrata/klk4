@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 
 	<main role="main">
+		<div id="banner-top-klk">
+			<img src="http://placehold.it/750x150">
+		</div>
+		<!-- banner -->
+		<!-- /banner -->
 		<!-- section -->
 		<section>
 			<h3>index</h3>

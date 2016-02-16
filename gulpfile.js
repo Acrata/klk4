@@ -1,6 +1,8 @@
 /* jshint node: true */
 /* global $: true */
 "use strict";
+	var	lost = require('lost');
+	var	postcss = require('gulp-postcss');
 
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
@@ -72,7 +74,11 @@ gulp.task( "copy", function() {
 
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
+	var processors = [
+		lost
+	];
 	return gulp.src( "src/css/sass/style.scss" )
+		.pipe(postcss(processors))
 		.pipe( $.rubySass({
 			style: "expanded",
 			precision: 10
@@ -135,7 +141,7 @@ gulp.task( "envProduction", function() {
 });
 
 /** Livereload */
-gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
+gulp.task( "watch", [ "template", "styles" ], function() {
 	var server = $.livereload();
 
 	/** Watch for livereoad */
@@ -155,7 +161,7 @@ gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
 	], [ "styles" ] );
 
 	/** Watch for JSHint */
-	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["jshint"] );
+	gulp.watch( "src/js/{!(lib)/*.js,*.js}" );
 });
 
 /** Build */
