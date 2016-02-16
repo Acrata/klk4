@@ -48,7 +48,7 @@
 					</div>
 					<!-- /logo -->
 
-					<i class="fa fa-shopping-cart fa-5x"></i>
+					<i class="icon-klk"></i>
 					<!-- nav -->
 					<nav class="nav" role="navigation">
 						<?php //html5blank_nav(); ?>

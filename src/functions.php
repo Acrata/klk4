@@ -69,7 +69,9 @@ class mi_walker_nav extends Walker_Nav_Menu
 {
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
                   $indent = str_repeat("\t", $depth);
-	                $output .= "\n$indent<div class=\"mp-level\"><h2></h2><a class=\"mp-back\" href=\"#\">back</a><ul class=\"nojoda-menu\">\n";
+	                $output .= "\n$indent<div class=\"mp-level\"><h2 ></h2>
+?><a class=\"mp-back \" href=\"#\">back</a><i class=\"fa fa-caret-left icon-klk\"></i>
+<ul class=\"nojoda-menu\">\n";
 	        }
 
 }

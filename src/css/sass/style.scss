@@ -32,6 +32,11 @@ nav#mp-menu h2 {
 	/* margin:auto;*/
 	/* width:95%;*/
   lost-center:1280px;
+  text-align: center;
+}
+
+.icon-klk {
+  background: url("img/tienda.svg");
 }
 
 main {
@@ -86,7 +91,13 @@ aside {
 .single aside {
   lost-column:2/6 0 flex;
 }
-
+.footer {
+  lost-center:80% flex;
+  border-top: 3px #666 solid
+}
+.footer p {
+  lost-column:1/4;
+}
 .single #main-container {
   width: 80%;
 }
@@ -100,7 +111,7 @@ aside {
 .footer, .single .footer {
   lost-row:1/6;
   lost-utility:clearfix;
-  background: aqua;
+  //background: aqua;
   // lost-column:1/136;
   // lost-center:970px;
   height: 122px;

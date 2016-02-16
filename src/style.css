@@ -247,7 +247,6 @@ input[type="search"] {
 .footer, .single .footer {
   lost-row: 1/6;
   lost-utility: clearfix;
-  background: aqua;
   height: 122px;
 }
 
@@ -609,6 +608,7 @@ nav#mp-menu h2 {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 #banner-top-klk:before {
@@ -624,6 +624,10 @@ nav#mp-menu h2 {
   content: '';
   display: table;
   clear: both;
+}
+
+.icon-klk {
+  background: url("img/tienda.svg");
 }
 
 main {
@@ -905,6 +909,47 @@ main:nth-child(2n + 1) {
   margin-right: 0;
 }
 
+.footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 3px #666 solid;
+}
+
+.footer p {
+  width: -webkit-calc(99.99% * 1/4 - (30px - 30px * 1/4));
+  width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+}
+
+.footer p:nth-child(1n) {
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+
+.footer p:last-child {
+  margin-right: 0;
+}
+
+.footer p:nth-child(4n) {
+  float: right;
+}
+
+.footer p:nth-child(4n) {
+  margin-right: 0;
+}
+
+.footer p:nth-child(4n + 1) {
+  clear: left;
+}
+
 .single #main-container {
   width: 80%;
 }
@@ -919,7 +964,6 @@ main:nth-child(2n + 1) {
   height: calc(99.99% * 1/6 - (30px - 30px * 1/6));
   margin-bottom: 30px;
   *zoom: 1;
-  background: aqua;
   height: 122px;
 }
 
