@@ -5,13 +5,23 @@
 	<section>
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
-		<!-- article -->
+			<div class="single-img-klk">
+				<svg width="0" height="0">
+  <defs>
+    <clipPath id="myClip">
+			<rect x="10" y="10"
+        width="100vw" height="100vh"
+        rx="15" ry="15"/>
+    </clipPath>
+  </defs>
+</svg>
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 				</a>
+			</div>
 <div id="main-container">
+		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<!-- post thumbnail -->
@@ -28,13 +38,15 @@
 			<!-- /post title -->
 
 			<!-- post details -->
-			<span class="date">
+		<div class="post-details-klk">
+			<span class="date"> <i class="fa fa-calendar"></i>
 				<time datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i'); ?>">
 					<?php the_date(); ?> <?php the_time(); ?>
 				</time>
 			</span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="author"><i class="fa fa-pencil"></i><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
 			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+			</div>
 			<!-- /post details -->
 
 			<?php the_content(); // Dynamic Content ?>
