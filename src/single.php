@@ -6,20 +6,27 @@
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<div class="single-img-klk">
-				<svg width="0" height="0">
-  <defs>
-    <clipPath id="myClip">
-			<rect x="10" y="10"
-        width="100vw" height="100vh"
-        rx="15" ry="15"/>
-    </clipPath>
-  </defs>
-</svg>
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
+	<?php
+$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+// echo $feat_image;
+?>
+				<a data-img-klk=<?php echo $feat_image?> data-color-klk="olive" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<h1 class="klk-overlay-title">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</h1>
+					<?php //the_post_thumbnail(); // Fullsize image for the single post ?>
+					<?php
+					$attachment_id = get_post_thumbnail_id( $post->ID );
+$img_src = wp_get_attachment_image_url( $attachment_id, 'medium' );
+$img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'medium' );
+?>
+<img class="klk-img"src="<?php echo esc_url( $img_src ); ?>"
+     srcset="<?php echo esc_attr( $img_srcset ); ?>"
+     sizes="(max-height: 25em) 100vw, 1680px" alt="A rad wolf">
 				</a>
 			</div>
+			<!-- /single-img-klk -->
 <div id="main-container">
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -79,10 +86,12 @@
 	<?php endif; ?>
 
 <?php get_sidebar(); ?>
+<!-- </div> -->
+<!-- main-container -->
 	</section>
 	<!-- /section -->
 	</main>
-
-
 </div>
+
+
 <?php get_footer(); ?>

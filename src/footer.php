@@ -1,5 +1,5 @@
 
-		</div>
+		<!-- </div> --> 
 		<!-- /main-container -->
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
@@ -13,8 +13,8 @@
 					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
 					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
 				</p>
-				</div>
 				<!-- /copyright -->
+				</div>
 				<!-- /container left -->
 					<div class="footer-container-right-klk">
 						<address class="addre-klk">
@@ -38,9 +38,9 @@
 			</footer>
 			<!-- /footer -->
 
-		</div>
+		<!-- </div> -->
 		<!-- /pu5her -->
-		</div>
+		<!-- </div> -->
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>

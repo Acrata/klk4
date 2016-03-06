@@ -21,9 +21,11 @@
 @import "partials/print";
 @import "partials/multi-p";
 
+@media (min-width: 700px) {
 
 body {
   font-family: 'Droid Sans', sans-serif;
+  background-color: olive;
 }
 nav#mp-menu h2 {
   color: white;
@@ -48,6 +50,7 @@ main {
 }
 
 .single #main-container {
+  background-color: attr(data-color-klk);
   margin-top: 25px;
   width: 100%;
   display: flex;
@@ -66,8 +69,49 @@ main {
   lost-utility:clearfix;
 }
 
+.home .post img {
+  width:100%;
+}
+
+.home article.post h2{
+  background-color: $gradient-header;
+  background: rgba(29,45,62,1);
+background: -webkit-linear-gradient(bottom left, rgba(29,45,62,1) 0%, rgba(40,53,67,1) 40%, rgba(16,36,55,1) 100%);
+background: -o-linear-gradient(bottom left, rgba(29,45,62,1) 0%, rgba(40,53,67,1) 40%, rgba(16,36,55,1) 100%);
+background: linear-gradient(to top right, rgba(29,45,62,1) 0%, rgba(40,53,67,1) 40%, rgba(16,36,55,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d2d3e', endColorstr='#102437', GradientType=1 );
+  padding: 17px;
+  margin: 1px;
+
+  a {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color:#C9C9C9;
+  }
+}
+
+.home .post-details-klk span.date {
+  padding:0px 1em;
+}
+
+.home .post-details-klk span.author {
+  padding: 0px 1em ;
+}
+.home .post-details-klk span.author ,
+.home .post-details-klk span.comments {
+  border-right: 1px solid #666;
+  padding: 0px 1em ;
+}
+article.post p::first-letter { /* Use :first-letter if support for IE 8 or earlier is needed */
+  color: #f6F6F6;
+  background-color:royalblue;
+  font-size: 2.3em;
+  width: 50px;
+}
+
 .single section a img {
-  width:100vw;
+  // width:100vw;
+
 }
 
 footer {
@@ -85,11 +129,14 @@ aside {
   lost-align:center;
   text-align: center;
 }
-.single main section article{
+.category {
+  background-color: pink;
+}
+.category main , .single main section article{
   lost-utility:clearfix;
   lost-column:4/6;
 }
-.single aside {
+.category aside, .single aside {
   lost-column:2/6 0 flex;
 }
 .footer {
@@ -112,7 +159,7 @@ aside {
 }
 .footer .footer-container-right-klk address{
   // lost-utility:clearfix;
-  lost-column:3/4 flex;
+  lost-column:2/4 flex;
   padding: 11px 0px;
 
 }
@@ -122,7 +169,14 @@ aside {
   // lost-utility:clearfix;
   lost-column:1/4 2;
   lost-align:top;
+  lots-utility:edit;
   height: auto;
+}
+.footer-emailbox-klk form {
+  background-color: aliceblue;
+  padding: -320px;
+  position: absolute;
+  top: 1px;
 }
 .footer .container-footer-aliados-klk {
   height: 122px;
@@ -130,10 +184,10 @@ aside {
   padding: 11px 0px;
   // lost-column:4/4;
   // lost-utility:clearfix;
-  background-color: red;
+  // background-color: red;
 }
 
-.single #main-container {
+.category main , .single #main-container {
   width: 80%;
 }
 .single article #banner-top-klk img {
@@ -169,6 +223,39 @@ span.date {
 }
 
 .single-img-klk {
-  height: auto;
+  height:90vh;
+  background-size: cover;
   background-color: rgba(255, 0, 0, .5);
+}
+.klk-img {
+  display: none;
+}
+
+.klk-overlay-title {
+  margin: 0px;
+}
+
+} //Media query
+
+.klk-img {
+  display: none;
+}
+body {
+  background-color: tomato;
+}
+
+@media (max-width:700px) {
+body {
+background-color: cyan;
+}
+
+.single-img-klk {
+  height:40vh;
+}
+.single #mp-pusher {
+  background-color: red;
+}
+.klk-overlay-title {
+  margin: 0px;
+}
 }
