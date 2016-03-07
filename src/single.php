@@ -88,10 +88,10 @@ $img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'medium' );
 <?php get_sidebar(); ?>
 <!-- </div> -->
 <!-- main-container -->
+</div>
 	</section>
 	<!-- /section -->
 	</main>
-</div>
 
 
 <?php get_footer(); ?>

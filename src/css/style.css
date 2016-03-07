@@ -217,12 +217,6 @@ input[type="search"] {
  * partials/footer
  * ---
  */
-.footer, .single .footer {
-  lost-row: 1/6;
-  lost-utility: clearfix;
-  height: 122px;
-}
-
 /**
  * partials/print
  * ---
@@ -1013,7 +1007,6 @@ html, body, .container, .scroller {
   .footer .footer-container-right-klk .footer-emailbox-klk {
     width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
     position: relative;
-    lots-utility: edit;
     height: auto;
   }
 
