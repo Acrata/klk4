@@ -1183,16 +1183,8 @@ body {
 }
 
 @media (max-width: 700px) {
-  body {
-    background-color: cyan;
-  }
-
   .single-img-klk {
     height: 40vh;
-  }
-
-  .single #mp-pusher {
-    background-color: red;
   }
 
   .klk-overlay-title {

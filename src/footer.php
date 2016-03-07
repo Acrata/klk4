@@ -1,5 +1,5 @@
 
-		<!-- </div> -->
+<!-- </div> -->
 		<!-- /main-container -->
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
