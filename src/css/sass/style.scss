@@ -25,7 +25,6 @@
 
 body {
   font-family: 'Droid Sans', sans-serif;
-  background-color: olive;
 }
 nav#mp-menu h2 {
   color: white;
@@ -45,7 +44,7 @@ main {
   lost-column:6/6 2;
   /*lost-move:1/13;*/
 }
-.single main {
+.single main  {
   lost-column:6/6;
 }
 
@@ -102,9 +101,8 @@ background: linear-gradient(to top right, rgba(29,45,62,1) 0%, rgba(40,53,67,1) 
   border-right: 1px solid #666;
   padding: 0px 1em ;
 }
-article.post p::first-letter { /* Use :first-letter if support for IE 8 or earlier is needed */
-  color: #f6F6F6;
-  background-color:royalblue;
+article.post .post-details-klk + p::first-letter { /* Use :first-letter if support for IE 8 or earlier is needed */
+  color: black;
   font-size: 2.3em;
   width: 50px;
 }
@@ -117,7 +115,7 @@ article.post p::first-letter { /* Use :first-letter if support for IE 8 or earli
 footer {
 }
 
-.home aside {
+.home aside, .archive aside {
   lost-column:2/6;
   lost-utility:clearfix;
 }
@@ -231,8 +229,23 @@ span.date {
   display: none;
 }
 
-.klk-overlay-title {
+.single-img-klk .klk-overlay-title {
   margin: 0px;
+}
+  .klk-overlay-title span.klk-title-span   {
+  color: white;
+  lost-align:center;
+  // lost-column:3/4;
+}
+.klk-overlay-title {
+a + a{
+ border: 5px solid white;
+ padding: 20px;
+ text-decoration: none;
+}
+  height:80vh;
+  // lost-align:vertical;
+  // lost-column:5/5;
 }
 
 } //Media query
@@ -241,13 +254,21 @@ span.date {
   display: none;
 }
 body {
-  background-color: tomato;
+}
+.klk-overlay-title {
+  lost-align:center;
 }
 
 @media (max-width:700px) {
 body {
 }
 
+.klk-overlay-title {
+  lost-align:bottom-right;
+}
+  .klk-overlay-title span.klk-title-span   {
+  color: white;
+}
 .single-img-klk {
   height:40vh;
 }

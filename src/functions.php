@@ -541,3 +541,8 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+function klk_titulo_single ($title, $id) {
+    return $title ='<span class="klk-title-span">' .$title."</span>";
+}
+// add_filter('the_title','klk_titulo_single', 10, 2);

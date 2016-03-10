@@ -11,9 +11,9 @@
 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 // echo $feat_image;
 ?>
-				<a data-img-klk=<?php echo $feat_image?> data-color-klk="olive" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				<a data-img-klk=<?php echo $feat_image?> data-color-klk="olive" href="<?php //the_permalink(); ?>" title="<?php //the_title_attribute(); ?>">
 			<h1 class="klk-overlay-title">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><span class="klk-title-span"><?php the_title(); ?></span></a>
 			</h1>
 					<?php //the_post_thumbnail(); // Fullsize image for the single post ?>
 					<?php

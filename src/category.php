@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<div id="main-container">
 	<main role="main">
 		<!-- section -->
 		<h3>catt</h3>
@@ -17,4 +18,5 @@
 
 <?php get_sidebar(); ?>
 
+</div>
 <?php get_footer(); ?>
