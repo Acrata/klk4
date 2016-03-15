@@ -32,7 +32,7 @@
 			<div class="mp-pusher" id="mp-pusher">
 				<nav id="mp-menu" class="mp-menu">
 						<div class="mp-level">
-							<h2 class="fa fa-globe fa-5x">All Categories</h2>
+							<h2 class="fa fa-globe fa-5x"></h2><p>Todo el contenido</p>
 			<?php multilevel_push_nav()?>
 		</nav>
 			<!-- header -->
