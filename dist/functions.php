@@ -28,7 +28,7 @@ if (function_exists('add_theme_support'))
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     add_image_size('large', 700, '', true); // Large Thumbnail
-    add_image_size('medium', 250, '', true); // Medium Thumbnail
+    add_image_size('medium', 350, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
@@ -69,10 +69,37 @@ class mi_walker_nav extends Walker_Nav_Menu
 {
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
                   $indent = str_repeat("\t", $depth);
-	                $output .= "\n$indent<div><h2>" . print_r($args).  "</h2><ul class=\"nojoda-menu\">\n";
+	                $output .= "\n$indent<div class=\"mp-level\"><h2 class=\"klk-icon\"></h2>
+?><a class=\"mp-back \" href=\"#\">back</a><i class=\"fa fa-caret-left icon-klk\"></i>
+<ul class=\"nojoda-menu\">\n";
 	        }
+
 }
 
+// HTML5 Blank navigation
+function multilevel_push_nav()
+{
+    wp_nav_menu(
+    array(
+        'theme_location'  => 'header-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'multi-menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => new mi_walker_nav()
+        )
+    );
+}
 // HTML5 Blank navigation
 function html5blank_nav()
 {
@@ -93,7 +120,7 @@ function html5blank_nav()
         'link_after'      => '',
         'items_wrap'      => '<ul>%3$s</ul>',
         'depth'           => 0,
-        'walker'          => new mi_walker_nav()
+        'walker'          => ''
         )
     );
 }
@@ -112,6 +139,10 @@ function html5blank_header_scripts()
 
             // Modernizr
             wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), '2.8.3');
+
+            // mlpushmenu
+            // wp_register_script('mlpushmenu', get_template_directory_uri() . '/js/mlpushmenu.js', array(), '1.0.0');
+
 
             // Custom scripts
             wp_register_script(
@@ -135,6 +166,20 @@ function html5blank_header_scripts()
         }
     }
 }
+
+//Load classie
+function mi_script_klk() {
+
+            // mlpushmenu
+            wp_register_script('mlpushmenu', get_template_directory_uri() . '/js/mlpushmenu.js', array(), '1.0.0',true);
+            wp_enqueue_script('mlpushmenu');
+
+            // mlpushmenu
+            wp_register_script('classie','https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js', array(), '1.0.1',true);
+            wp_enqueue_script('classie');
+}
+
+add_action( 'wp_enqueue_scripts', 'mi_script_klk' );
 
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
@@ -171,6 +216,7 @@ function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
+        'Multi-level-menu' => __('Header Multi Menu', 'html5blank'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
         'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
     ));
@@ -450,8 +496,8 @@ function create_post_type_html5()
     register_post_type('html5-blank', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
+            'name' => __('Kalacra Custom Post', 'html5blank'), // Rename these to suit
+            'singular_name' => __('Kalacra Custom Post', 'html5blank'),
             'add_new' => __('Add New', 'html5blank'),
             'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
             'edit' => __('Edit', 'html5blank'),
@@ -495,3 +541,8 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+function klk_titulo_single ($title, $id) {
+    return $title ='<span class="klk-title-span">' .$title."</span>";
+}
+// add_filter('the_title','klk_titulo_single', 10, 2);
