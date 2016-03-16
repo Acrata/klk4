@@ -659,6 +659,8 @@ html, body, .container, .scroller {
     background-color: attr(data-color-klk);
     margin-top: 25px;
     width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     *zoom: 1;
     max-width: 100%;
@@ -717,6 +719,8 @@ html, body, .container, .scroller {
 
   #main-container {
     width: 80%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     *zoom: 1;
     max-width: 100%;
@@ -754,8 +758,6 @@ html, body, .container, .scroller {
   .home article.post h2 {
     background-color: -moz-linear-gradient(45deg, #1d2d3e 0%, #283543 40%, #102437 100%);
     background: #1d2d3e;
-    background: -webkit-linear-gradient(bottom left, #1d2d3e 0%, #283543 40%, #102437 100%);
-    background: -o-linear-gradient(bottom left, #1d2d3e 0%, #283543 40%, #102437 100%);
     background: linear-gradient(to top right, #1d2d3e 0%, #283543 40%, #102437 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d2d3e', endColorstr='#102437', GradientType=1 );
     padding: 17px;
@@ -837,6 +839,7 @@ html, body, .container, .scroller {
     right: auto;
     bottom: auto;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
 
@@ -883,6 +886,8 @@ html, body, .container, .scroller {
   }
 
   .category aside, .single aside {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     width: calc(99.99% * 2/6 - (30px - 30px * 2/6));
   }
@@ -904,7 +909,11 @@ html, body, .container, .scroller {
   }
 
   .footer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
     flex-flow: row wrap;
     max-width: 80%;
     margin-left: auto;
@@ -981,6 +990,8 @@ html, body, .container, .scroller {
   }
 
   .footer .footer-container-right-klk address {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     width: calc(99.99% * 2/4 - (30px - 30px * 2/4));
     padding: 11px 0px;
@@ -1036,6 +1047,7 @@ html, body, .container, .scroller {
     right: auto;
     bottom: auto;
     left: 50%;
+    -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
   }
 
@@ -1098,6 +1110,10 @@ html, body, .container, .scroller {
     margin-right: 4px;
   }
 
+  h2.klk-icon {
+    color: pink;
+  }
+
   .single-img-klk {
     height: 90vh;
     background-size: cover;
@@ -1123,6 +1139,7 @@ html, body, .container, .scroller {
     right: auto;
     bottom: auto;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
 
@@ -1149,6 +1166,7 @@ html, body, .container, .scroller {
   right: auto;
   bottom: auto;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -1163,6 +1181,7 @@ html, body, .container, .scroller {
     right: 0;
     bottom: 0;
     left: auto;
+    -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 

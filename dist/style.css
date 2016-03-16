@@ -1,5 +1,5 @@
 /*!
- * Theme Name: HTML5 Blank
+ * Theme Name: HTML5 Blankk
  * Theme URI: http://html5blank.com
  * Description: HTML5 Blank WordPress Theme
  * Version: 1.5.0
@@ -692,9 +692,9 @@ html, body, .container, .scroller {
     background-color: attr(data-color-klk);
     margin-top: 25px;
     width: 100%;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     *zoom: 1;
     max-width: 100%;
@@ -754,9 +754,9 @@ html, body, .container, .scroller {
 
   #main-container {
     width: 80%;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     *zoom: 1;
     max-width: 100%;
@@ -925,9 +925,9 @@ html, body, .container, .scroller {
   }
 
   .category aside, .single aside {
-    -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
+    -webkit-box-flex: 0;
     flex: 0 0 auto;
     width: -webkit-calc(99.99% * 2/6 - (30px - 30px * 2/6));
     width: calc(99.99% * 2/6 - (30px - 30px * 2/6));
@@ -950,9 +950,9 @@ html, body, .container, .scroller {
   }
 
   .footer {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     -webkit-flex-flow: row wrap;
     -ms-flex-flow: row wrap;
@@ -1034,9 +1034,9 @@ html, body, .container, .scroller {
   }
 
   .footer .footer-container-right-klk address {
-    -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
+    -webkit-box-flex: 0;
     flex: 0 0 auto;
     width: -webkit-calc(99.99% * 2/4 - (30px - 30px * 2/4));
     width: calc(99.99% * 2/4 - (30px - 30px * 2/4));

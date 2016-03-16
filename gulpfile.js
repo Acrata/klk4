@@ -3,6 +3,9 @@
 "use strict";
 	var	lost = require('lost');
 	var	postcss = require('gulp-postcss');
+	var sourcemaps   = require('gulp-sourcemaps');
+  var autoprefixer = require('autoprefixer-core');
+
 
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
@@ -75,7 +78,9 @@ gulp.task( "copy", function() {
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
 	var processors = [
-		lost
+		lost,
+		autoprefixer({ browsers: ['last 2 versions'] })
+
 	];
 	return gulp.src( "src/css/sass/style.scss" )
 		.pipe(postcss(processors))
